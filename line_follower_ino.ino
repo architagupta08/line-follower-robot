@@ -8,7 +8,7 @@
 
 #define STBY 21
 
-// IR Sensors
+
 #define LEFT_SENSOR 34
 #define CENTER_SENSOR 35
 #define RIGHT_SENSOR 32
@@ -30,7 +30,7 @@ void setup() {
   pinMode(CENTER_SENSOR, INPUT);
   pinMode(RIGHT_SENSOR, INPUT);
 
-  digitalWrite(STBY, HIGH); // Enable motor driver
+  digitalWrite(STBY, HIGH); 
 }
 
 void loop() {
@@ -38,7 +38,7 @@ void loop() {
   int center = digitalRead(CENTER_SENSOR);
   int right = digitalRead(RIGHT_SENSOR);
 
-  // Line following logic
+ 
   if (center == LOW && left == HIGH && right == HIGH) {
     moveForward(baseSpeed, baseSpeed);
   }
@@ -53,7 +53,7 @@ void loop() {
   }
 }
 
-// -------- Motor Functions --------
+
 
 void moveForward(int speedA, int speedB) {
   digitalWrite(AIN1, HIGH);
